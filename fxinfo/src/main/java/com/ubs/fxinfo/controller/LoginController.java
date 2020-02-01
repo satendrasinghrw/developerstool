@@ -27,7 +27,7 @@ import com.ubs.fxinfo.service.LoginService;
 import com.ubs.fxinfo.service.Statistics;
 
 @RestController
-@RequestMapping(path = "/fx")
+@RequestMapping(path = "/login")
 @CrossOrigin(origins = "http://192.168.10.89:5502")
 public final class LoginController {
 
