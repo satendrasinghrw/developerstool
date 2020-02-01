@@ -42,7 +42,7 @@ public enum Statistics {
 		return auditDB;
 	}
 
-	public void addAuditRecord(String auth, String event) throws IOException {
-		auditDB.writeToFile(new AuditData(getUserId(auth), event, Utils.getCurrentDateTime()));
+	public void addAuditRecord(String userId, String event) throws IOException {
+		auditDB.writeToFile(new AuditData(userId, event, Utils.getCurrentDateTime()));
 	}
 }

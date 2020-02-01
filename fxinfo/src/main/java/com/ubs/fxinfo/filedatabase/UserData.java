@@ -35,9 +35,15 @@ public final class UserData {
 		buffer = ByteBuffer.allocate(USER_DATA_LENGTH);
 		setUserId(request.getEmailId());
 		setFirstName(request.getFirstName());
-		setLastName(request.getLastName());
-		setCompanyName(request.getCompanyName());
-		setMobileNumber(request.getMobileNumber());
+		if(request.getLastName() != null) {
+			setLastName(request.getLastName());
+		}
+		if(request.getCompanyName() != null) {
+			setCompanyName(request.getCompanyName());
+		}
+		if(request.getMobileNumber() != null) {
+			setMobileNumber(request.getMobileNumber());
+		}
 		setPassword(request.getPassword());
 		setAccessToken(UUID.randomUUID().toString());
 		setCreateDateTime(Utils.getStrDateTime(Utils.getDateTime().toEpochSecond()));

@@ -1,12 +1,14 @@
 package com.ubs.fxinfo.service;
 
+import org.springframework.http.ResponseEntity;
+
 import com.ubs.fxinfo.model.LoginRequest;
 import com.ubs.fxinfo.model.SignupRequest;
 
 public interface LoginService {
 
-	String processSignup(SignupRequest request);
+	ResponseEntity<String> processSignup(SignupRequest request);
 
-	String processLogin(LoginRequest request);
+	ResponseEntity<String> processLogin(LoginRequest request);
 
 }

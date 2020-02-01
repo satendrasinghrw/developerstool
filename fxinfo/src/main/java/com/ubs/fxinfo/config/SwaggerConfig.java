@@ -22,6 +22,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
+	@SuppressWarnings("deprecation")
 	public static final ApiInfo DEFAULT_API_INFO = new ApiInfo(
 		      "FX Spot Rate API", "", "0.1",
 		      "urn:tos", "", 

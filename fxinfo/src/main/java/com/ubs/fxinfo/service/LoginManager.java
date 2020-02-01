@@ -2,8 +2,8 @@ package com.ubs.fxinfo.service;
 
 import java.io.IOException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.ubs.fxinfo.common.Utils;
@@ -16,9 +16,6 @@ import com.ubs.fxinfo.model.SignupRequest;
 @Service
 public class LoginManager implements LoginService {
 
-	private final Logger log = LoggerFactory
-			.getLogger(LoginManager.class);
-
 	private final long DATA_MAPPED_SIZE = 1024*100L;
 	private final long METADATA_MAPPED_SIZE = 1024*10L;
 
@@ -29,7 +26,7 @@ public class LoginManager implements LoginService {
 	}
 	
 	@Override
-	public String processSignup(SignupRequest request) {
+	public ResponseEntity<String> processSignup(SignupRequest request) {
 		final boolean allowed = !db.isUserPresent(request.getEmailId());
 		if (allowed) {
 			UserData data = new UserData(request);
@@ -37,36 +34,36 @@ public class LoginManager implements LoginService {
 				db.writeToFile(request.getEmailId(), data.byteArray());
 			} catch (IOException e) {
 				e.printStackTrace();
-				return "User creation failed, Please contact system admin.";
+				return new ResponseEntity<String>("User creation failed, Please contact system admin.",HttpStatus.FORBIDDEN);
 			}
 		} else {
-			return request.getEmailId() +" user already exist, please try with different emailId";
+			return new ResponseEntity<String>(request.getEmailId() +" user already exist, please try with different emailId", HttpStatus.NOT_ACCEPTABLE);
 		}
-		return request.getEmailId() +" user successfully created!";
+		return new ResponseEntity<String>(request.getEmailId() +" user successfully created!", HttpStatus.CREATED);
 	}
 
 	@Override
-	public String processLogin(LoginRequest request) {
+	public ResponseEntity<String> processLogin(LoginRequest request) {
 		
 		try {
 			final byte []data = db.readFromFile(request.getUserName());
 			if (data == null ) {
-				return request.getUserName()+" user does not exist";
+				return new ResponseEntity<String>(request.getUserName()+" user does not exist", HttpStatus.BAD_REQUEST);
 			} else {
 				final UserData userData = new UserData(data);
 			
 				if (request.getPassword() == null || !request.getPassword().equals(userData.getPassword())) {
-					return "invalid userid or password";
+					return new ResponseEntity<String>("invalid userid or password", HttpStatus.UNAUTHORIZED);
 				} else {
 					Statistics.INSTANCE.addLiveUser(userData);
 					Statistics.INSTANCE.getAuditDB().writeToFile(
 							new AuditData(userData.getUserId(), "Login", Utils.getCurrentDateTime()));
-					return "You are logged in successfully, your access code is ["+userData.getAccessToken()+"]";
+					return new ResponseEntity<String>("You are logged in successfully, your access code is ["+userData.getAccessToken()+"]", HttpStatus.OK);
 				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return "unknow error, please contact to system admin";
+		return new ResponseEntity<String>("unknow error, please contact to system admin", HttpStatus.FORBIDDEN);
 	}
 }

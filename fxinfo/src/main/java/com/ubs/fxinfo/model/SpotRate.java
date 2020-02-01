@@ -4,12 +4,22 @@ public class SpotRate {
 	
 	private String currencyPair;
 	private float spotRate;
+	private String remark;
 	
 	public SpotRate(String currencyPair, float spotRate) {
 		this.currencyPair = currencyPair;
 		this.spotRate = spotRate;
 	}
 	
+	public String getRemark() {
+		return remark;
+	}
+	
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+
 	public String getCurrencyPair() {
 		return currencyPair;
 	}

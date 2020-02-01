@@ -47,7 +47,14 @@ public final class FXInfoController {
 		log.info("received currency pair for spot rate: {}", currencyPair);
 		
 		try {
-			Statistics.INSTANCE.addAuditRecord(auth, "spoRate");
+			final String userId = Statistics.INSTANCE.getUserId(auth);
+			if (userId == null) {
+				SpotRate sr = new SpotRate("NA", -1);
+				sr.setRemark("User not logged in currently for supplied auth code");
+				log.error("{}",sr.getRemark());
+				return new ResponseEntity<SpotRate>(sr, HttpStatus.UNAUTHORIZED);
+			}
+			Statistics.INSTANCE.addAuditRecord(userId, "spoRate");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
