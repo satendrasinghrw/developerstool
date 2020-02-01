@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <title>Swagger UI</title>
     <link rel="stylesheet" type="text/css" href="./swagger-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
     <link
       rel="icon"
       type="image/png"
@@ -38,6 +39,30 @@
   </head>
 
   <body>
+    <nav class="navbar sticky-top navbar-expand-sm navbar-white bg-white mb-3">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../resources/ubs-logo.png" alt="UBS logo" width="25%" />
+        <span class="text-dark"><strong>UBS Developer Portal</strong></span>
+      </a>
+      <div class="container-fluid">
+        <ul class="nav nav-fill nav-pills mx-auto">
+          <li class="nav-item">
+            <a class="nav-link text-dark bg-light" href="../apiproducts.html"
+              >API Products</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark bg-light" href="../apiproducts.html"
+              >Sign Out</a
+            >
+          </li>
+        </ul>
+        <form class="form-inline mx-auto">
+          <input type="text" class="form-control mr-2" placeholder="Search" />
+          <button class="btn btn-danger">Search</button>
+        </form>
+      </div>
+    </nav>
     <div id="swagger-ui"></div>
 
     <script src="./swagger-ui-bundle.js"></script>
