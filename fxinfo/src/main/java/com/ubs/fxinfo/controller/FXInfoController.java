@@ -22,6 +22,7 @@ import com.ubs.fxinfo.service.Statistics;
 @RestController
 @RequestMapping("/fx")
 @CrossOrigin(origins = "http://192.168.10.89:5502")
+@Api(value="FX Spot Rate", description="The Forex spot rate is the current exchange rate at which a currency pair can be bought or sold.")
 public final class FXInfoController {
 
 	private static final Logger log = LoggerFactory
@@ -36,6 +37,7 @@ public final class FXInfoController {
 	 * @return SpotRate
 	 */
 	@GetMapping("/rate/{currencypair}")
+	@ApiOperation(value = "Get spot rate for a currency pair")
 	public ResponseEntity<SpotRate> getSpotRate(
 			@PathVariable(value = "currencypair") String currencyPair, @RequestHeader(value = "auth") String auth) {
 
