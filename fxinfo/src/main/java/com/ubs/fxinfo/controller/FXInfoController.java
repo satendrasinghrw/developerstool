@@ -1,5 +1,10 @@
 package com.ubs.fxinfo.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.SwaggerDefinition;
+import io.swagger.annotations.Tag;
+
 import java.io.IOException;
 
 import org.slf4j.Logger;
@@ -7,8 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scripting.support.StaticScriptSource;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -21,8 +24,8 @@ import com.ubs.fxinfo.service.Statistics;
 
 @RestController
 @RequestMapping("/fx")
-@CrossOrigin(origins = "http://192.168.10.89:5502")
-@Api(value="FX Spot Rate", description="The Forex spot rate is the current exchange rate at which a currency pair can be bought or sold.")
+@Api(value="FX Spot Rate", description="Returns the spot rate for given currency pair")
+@SwaggerDefinition(tags = @Tag(name = ""))
 public final class FXInfoController {
 
 	private static final Logger log = LoggerFactory
@@ -37,7 +40,7 @@ public final class FXInfoController {
 	 * @return SpotRate
 	 */
 	@GetMapping("/rate/{currencypair}")
-	@ApiOperation(value = "Get spot rate for a currency pair")
+	@ApiOperation(value = "Get spot rate for given currency pair")
 	public ResponseEntity<SpotRate> getSpotRate(
 			@PathVariable(value = "currencypair") String currencyPair, @RequestHeader(value = "auth") String auth) {
 
