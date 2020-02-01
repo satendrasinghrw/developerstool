@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample FX UI</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <script src="js/fx.js"></script>
+    <script src="js/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav
+      class="navbar sticky-top navbar-expand-sm navbar-secondary bg-secondary mb-3"
+    >
+      <a class="navbar-brand text-dark" href="index.html">
+        <img src="resources/ubs-logo.png" alt="UBS logo" width="25%" />
+        <span class="text-dark"><strong>UBS Developer Portal</strong></span>
+      </a>
+      <div class="container-fluid">
+        <ul class="nav nav-fill nav-pills mx-auto">
+          <li class="nav-item">
+            <a class="nav-link bg-dark text-light" href="#">API Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#">Sign Up</a>
+          </li>
+        </ul>
+        <form class="form-inline mx-auto">
+          <input type="text" class="form-control mr-2" placeholder="Search" />
+          <button class="btn btn-dark">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="container" id="swaggerid"></div>
+  </body>
+</html>
