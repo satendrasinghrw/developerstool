@@ -2,7 +2,6 @@ package com.ubs.fxinfo.service;
 
 import java.io.IOException;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,5 +43,14 @@ public enum Statistics {
 
 	public void addAuditRecord(String userId, String event) throws IOException {
 		auditDB.writeToFile(new AuditData(userId, event, Utils.getCurrentDateTime()));
+	}
+
+	public String removeLiveUser(String authToken) {
+		if(liveUserMap.containsKey(authToken)) {
+			liveUserMap.remove(authToken);
+			return "User logged out"; 
+		} else {
+			return "User not found to remove";
+		}
 	}
 }

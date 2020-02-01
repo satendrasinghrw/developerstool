@@ -6,10 +6,12 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -52,6 +54,16 @@ public final class LoginController {
 		final ResponseEntity<String> response = loginService.processLogin(request);
 
 		return response;
+	}
+	
+	@GetMapping(path = "/signout")
+	public ResponseEntity<String> signoutRequest(@RequestHeader(value = "auth") String auth) {
+
+		log.info("received signout request");
+		
+		String response = Statistics.INSTANCE.removeLiveUser(auth);
+		
+		return new ResponseEntity<String>(response, HttpStatus.OK);
 	}
 
 	@GetMapping("/audit")
