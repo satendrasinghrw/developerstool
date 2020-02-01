@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sample FX UI</title>
+    <title>UBS Developer Portal</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -34,11 +34,19 @@
               data-toggle="modal"
               data-target="#loginModal"
               href="#loginModal"
+              id="loginId"
               >Log In</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Sign Up</a>
+            <a
+              class="nav-link text-dark"
+              data-toggle="modal"
+              data-target="#signupModal"
+              href="#signupModal"
+              id="signUp"
+              >Sign Up</a
+            >
           </li>
         </ul>
         <form class="form-inline mx-auto">
@@ -63,6 +71,7 @@
                   type="text"
                   placeholder="Username"
                   class="form-control"
+                  id="UserName"
                 />
               </div>
               <div class="form-group">
@@ -71,6 +80,7 @@
                   type="password"
                   placeholder="Password"
                   class="form-control"
+                  id="Password"
                 />
               </div>
             </form>
@@ -87,6 +97,83 @@
         </div>
       </div>
     </div>
+    <div class="modal" id="signupModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Login</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  class="form-control"
+                  id="firstName"
+                />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  class="form-control"
+                  id="lastName"
+                />
+              </div>
+              <div class="form-group">
+                <label for="emailId">Email Id</label>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  class="form-control"
+                  id="emailId"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="form-control"
+                  id="password"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Company Name</label>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  class="form-control"
+                  id="companyName"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Mobile Number</label>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  class="form-control"
+                  id="mobileNumber"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-primary"
+              data-dismiss="modal"
+              onclick="sendSignUpRequest()"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="jumbotron text-center bg-white">
         <h1 class="display-4">Welcome To UBS Developer Portal</h1>
@@ -98,7 +185,7 @@
         </p>
         <hr />
         <a class="btn btn-danger btn-lg" href="apiproducts.html" role="button"
-          >Explore Our Products</a
+          >Explore Our API</a
         >
       </div>
       <div class="card mb-3">
