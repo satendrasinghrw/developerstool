@@ -1,6 +1,6 @@
 function sendSignUpRequest() {
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", "http://192.168.10.89:8080/login/signup", true);
+  xmlhttp.open("POST", "http://192.168.1.7:8080/login/signup", true);
   xmlhttp.setRequestHeader("Content-type", "Application/JSON");
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -45,23 +45,29 @@ function fxtest() {
 }
 
 function validateFXLogin() {
+  userName = document.getElementById("UserName").value;
+  console.log(userName);
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", "http://192.168.10.89:8080/login/signin", true);
+  xmlhttp.open("POST", "http://192.168.1.7:8080/login/signin", true);
   xmlhttp.setRequestHeader("Content-type", "Application/JSON");
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       console.log(this.responseText);
-      var accessToken = this.responseText.substring(
-        this.responseText.indexOf("[") + 1,
-        this.responseText.indexOf("]")
-      );
-      document.cookie = accessToken;
-      console.log(document.cookie);
-      var element = document.getElementById("loginId");
-      console.log(element);
-      element.innerHTML = "Sign Out";
-      console.log(element);
-      document.getElementById("signUp").remove();
+      if (userName.localeCompare("admin") == 0) {
+        window.location.replace("http://192.168.1.7:5502/admindashboard.html");
+      } else {
+        var accessToken = this.responseText.substring(
+          this.responseText.indexOf("[") + 1,
+          this.responseText.indexOf("]")
+        );
+        document.cookie = accessToken;
+        console.log(document.cookie);
+        var element = document.getElementById("loginId");
+        console.log(element);
+        element.innerHTML = "Logout";
+        console.log(element);
+        document.getElementById("signUp").remove();
+      }
     }
   };
   xmlhttp.send(
