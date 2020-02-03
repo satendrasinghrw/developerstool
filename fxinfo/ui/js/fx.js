@@ -53,7 +53,7 @@ function validateFXLogin() {
       console.log(this.responseText);
       var accessToken = this.responseText.substring(
         this.responseText.indexOf("[") + 1,
-        this.responseText.indexOf("]") - 1
+        this.responseText.indexOf("]")
       );
       document.cookie = accessToken;
       console.log(document.cookie);
@@ -70,8 +70,4 @@ function validateFXLogin() {
       userName: document.getElementById("UserName").value
     })
   );
-}
-
-function changehtml(htmlobject) {
-  console.log(htmlobject);
 }
