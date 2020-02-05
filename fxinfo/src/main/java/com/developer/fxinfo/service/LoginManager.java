@@ -1,4 +1,4 @@
-package com.ubs.fxinfo.service;
+package com.developer.fxinfo.service;
 
 import java.io.IOException;
 
@@ -6,12 +6,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.ubs.fxinfo.common.Utils;
-import com.ubs.fxinfo.filedatabase.AuditData;
-import com.ubs.fxinfo.filedatabase.FileDatabase;
-import com.ubs.fxinfo.filedatabase.UserData;
-import com.ubs.fxinfo.model.LoginRequest;
-import com.ubs.fxinfo.model.SignupRequest;
+import com.developer.fxinfo.common.Utils;
+import com.developer.fxinfo.filedatabase.AuditData;
+import com.developer.fxinfo.filedatabase.FileDatabase;
+import com.developer.fxinfo.filedatabase.UserData;
+import com.developer.fxinfo.model.LoginRequest;
+import com.developer.fxinfo.model.SignupRequest;
 
 @Service
 public class LoginManager implements LoginService {

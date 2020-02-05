@@ -1,11 +1,11 @@
-package com.ubs.fxinfo.filedatabase;
+package com.developer.fxinfo.filedatabase;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.UUID;
 
-import com.ubs.fxinfo.common.Utils;
-import com.ubs.fxinfo.model.SignupRequest;
+import com.developer.fxinfo.common.Utils;
+import com.developer.fxinfo.model.SignupRequest;
 
 public final class UserData {
 	

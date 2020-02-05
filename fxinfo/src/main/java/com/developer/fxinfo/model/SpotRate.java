@@ -1,4 +1,4 @@
-package com.ubs.fxinfo.model;
+package com.developer.fxinfo.model;
 
 public class SpotRate {
 	

@@ -1,4 +1,4 @@
-package com.ubs.fxinfo;
+package com.developer.fxinfo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

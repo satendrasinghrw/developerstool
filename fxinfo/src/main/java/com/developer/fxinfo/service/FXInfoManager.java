@@ -1,4 +1,4 @@
-package com.ubs.fxinfo.service;
+package com.developer.fxinfo.service;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,9 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.ubs.fxinfo.common.Currency;
-import com.ubs.fxinfo.common.MajorCurrencyPair;
-import com.ubs.fxinfo.model.SpotRate;
+import com.developer.fxinfo.common.Currency;
+import com.developer.fxinfo.common.MajorCurrencyPair;
+import com.developer.fxinfo.model.SpotRate;
 
 @Service
 public class FXInfoManager implements FXInfoService {

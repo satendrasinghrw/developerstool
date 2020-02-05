@@ -1,4 +1,4 @@
-package com.ubs.fxinfo;
+package com.developer.fxinfo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +10,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.developer.fxinfo.FxinfoApplication;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = FxinfoApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

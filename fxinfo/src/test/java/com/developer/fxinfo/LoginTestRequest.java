@@ -1,4 +1,4 @@
-package com.ubs.fxinfo;
+package com.developer.fxinfo;
 
 public class LoginTestRequest {
 	private String userName;

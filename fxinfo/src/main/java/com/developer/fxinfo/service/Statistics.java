@@ -1,14 +1,14 @@
-package com.ubs.fxinfo.service;
+package com.developer.fxinfo.service;
 
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.ubs.fxinfo.common.Utils;
-import com.ubs.fxinfo.filedatabase.AuditData;
-import com.ubs.fxinfo.filedatabase.AuditDatabase;
-import com.ubs.fxinfo.filedatabase.UserData;
+import com.developer.fxinfo.common.Utils;
+import com.developer.fxinfo.filedatabase.AuditData;
+import com.developer.fxinfo.filedatabase.AuditDatabase;
+import com.developer.fxinfo.filedatabase.UserData;
 
 public enum Statistics {
 

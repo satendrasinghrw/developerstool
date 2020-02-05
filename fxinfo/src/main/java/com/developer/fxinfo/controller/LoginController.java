@@ -1,4 +1,4 @@
-package com.ubs.fxinfo.controller;
+package com.developer.fxinfo.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ubs.fxinfo.filedatabase.AuditDatabase;
-import com.ubs.fxinfo.filedatabase.AuditDatabase.AuditRecord;
-import com.ubs.fxinfo.model.LoginRequest;
-import com.ubs.fxinfo.model.SignupRequest;
-import com.ubs.fxinfo.service.LoginService;
-import com.ubs.fxinfo.service.Statistics;
+import com.developer.fxinfo.filedatabase.AuditDatabase;
+import com.developer.fxinfo.filedatabase.AuditDatabase.AuditRecord;
+import com.developer.fxinfo.model.LoginRequest;
+import com.developer.fxinfo.model.SignupRequest;
+import com.developer.fxinfo.service.LoginService;
+import com.developer.fxinfo.service.Statistics;
 
 @RestController
 @RequestMapping(path = "/login")

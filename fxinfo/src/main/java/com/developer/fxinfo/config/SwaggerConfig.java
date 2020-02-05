@@ -1,4 +1,4 @@
-package com.ubs.fxinfo.config;
+package com.developer.fxinfo.config;
 
 import io.swagger.annotations.ApiOperation;
 

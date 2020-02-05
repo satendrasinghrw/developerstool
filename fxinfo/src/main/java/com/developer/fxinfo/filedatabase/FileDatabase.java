@@ -1,4 +1,4 @@
-package com.ubs.fxinfo.filedatabase;
+package com.developer.fxinfo.filedatabase;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.ubs.fxinfo.controller;
+package com.developer.fxinfo.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ubs.fxinfo.model.SpotRate;
-import com.ubs.fxinfo.service.FXInfoService;
-import com.ubs.fxinfo.service.Statistics;
+import com.developer.fxinfo.model.SpotRate;
+import com.developer.fxinfo.service.FXInfoService;
+import com.developer.fxinfo.service.Statistics;
 
 @RestController
 @RequestMapping("/fx")

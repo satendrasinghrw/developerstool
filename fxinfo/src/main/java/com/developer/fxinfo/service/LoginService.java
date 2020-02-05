@@ -1,9 +1,9 @@
-package com.ubs.fxinfo.service;
+package com.developer.fxinfo.service;
 
 import org.springframework.http.ResponseEntity;
 
-import com.ubs.fxinfo.model.LoginRequest;
-import com.ubs.fxinfo.model.SignupRequest;
+import com.developer.fxinfo.model.LoginRequest;
+import com.developer.fxinfo.model.SignupRequest;
 
 public interface LoginService {
 

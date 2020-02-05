@@ -1,6 +1,6 @@
-package com.ubs.fxinfo.service;
+package com.developer.fxinfo.service;
 
-import com.ubs.fxinfo.model.SpotRate;
+import com.developer.fxinfo.model.SpotRate;
 
 public interface FXInfoService {
 

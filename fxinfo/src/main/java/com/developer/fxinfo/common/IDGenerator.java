@@ -1,4 +1,4 @@
-package com.ubs.fxinfo.common;
+package com.developer.fxinfo.common;
 
 
 import java.util.concurrent.atomic.AtomicLong;
