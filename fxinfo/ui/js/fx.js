@@ -1,6 +1,6 @@
 function sendSignUpRequest() {
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", "http://192.168.1.7:8080/login/signup", true);
+  xmlhttp.open("POST", "http://192.168.10.104:8080/login/signup", true);
   xmlhttp.setRequestHeader("Content-type", "Application/JSON");
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -30,7 +30,7 @@ function fxtest() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open(
     "GET",
-    "http://192.168.10.89:8080/swagger-ui.html#!/fx-info-controller/getSpotRateUsingGET",
+    "http://http://192.168.10.104:8080/swagger-ui.html#!/fx-info-controller/getSpotRateUsingGET",
     true
   );
   xmlhttp.onreadystatechange = function() {
@@ -48,13 +48,15 @@ function validateFXLogin() {
   userName = document.getElementById("UserName").value;
   console.log(userName);
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", "http://192.168.1.7:8080/login/signin", true);
+  xmlhttp.open("POST", "http://192.168.10.104:8080/login/signin", true);
   xmlhttp.setRequestHeader("Content-type", "Application/JSON");
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       console.log(this.responseText);
       if (userName.localeCompare("admin") == 0) {
-        window.location.replace("http://192.168.1.7:5502/admindashboard.html");
+        window.location.replace(
+          "http://192.168.10.104:5502/admindashboard.html"
+        );
       } else {
         var accessToken = this.responseText.substring(
           this.responseText.indexOf("[") + 1,
