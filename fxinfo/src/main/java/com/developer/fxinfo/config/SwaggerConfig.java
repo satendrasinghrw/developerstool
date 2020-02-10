@@ -45,7 +45,7 @@ public class SwaggerConfig {
 	   return new WebMvcConfigurerAdapter() {
 	      @Override
 	      public void addCorsMappings(CorsRegistry registry) {
-	         registry.addMapping("/**").allowedOrigins("http://192.168.10.89:5502");
+	         registry.addMapping("/**").allowedOrigins("http://192.168.10.104:5502");
 
 	      }
 	   };
@@ -56,7 +56,7 @@ public class SwaggerConfig {
 	   UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 	   CorsConfiguration config = new CorsConfiguration();
 	   config.setAllowCredentials(true);
-	   config.addAllowedOrigin("http://192.168.10.89:5502");
+	   config.addAllowedOrigin("http://192.168.10.104:5502");
 	   config.addAllowedHeader("*");
 	   config.addAllowedMethod("GET");
 	   config.addAllowedMethod("POST");
