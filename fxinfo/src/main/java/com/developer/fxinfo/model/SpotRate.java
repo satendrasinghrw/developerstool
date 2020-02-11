@@ -4,7 +4,7 @@ public class SpotRate {
 	
 	private String currencyPair;
 	private float spotRate;
-	private String remark;
+	private String remark = "Success";
 	
 	public SpotRate(String currencyPair, float spotRate) {
 		this.currencyPair = currencyPair;
